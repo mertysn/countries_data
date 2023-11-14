@@ -18,9 +18,26 @@
 
 // const p = document.createElement('p')
 // console.log(p)
+function ulkeler() {
+    
+const container = document.createElement('div')
+container.classList.add('container')
+// container.style.display = 'none'
+
+document.body.append(container)
+
+
+const row = document.createElement('div')
+row.setAttribute('class', 'row mt-3')
+
+container.append(row)
+
 
 countries_data.forEach((ulke) => {
     console.log(ulke)
+
+    const col = document.createElement('div')
+    col.classList.add('col-3')
 
     const div = document.createElement('div')
     div.classList.add('card')
@@ -52,7 +69,26 @@ countries_data.forEach((ulke) => {
     div.append(img)
     div.append(div2)
 
-    document.body.append(div)
+    col.append(div)
+
+    row.append(col)
+
+
 
 
 })
+}
+
+
+const btn = document.createElement('button')
+btn.setAttribute('class', 'btn btn-dark')
+btn.textContent = 'Ülkeler'
+
+document.body.append(btn)
+
+
+
+btn.addEventListener('click', ulkeler)
+// btn.addEventListener('click', () => {
+//     container.classList.toggle('show')
+// })
